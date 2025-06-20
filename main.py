@@ -1,5 +1,10 @@
-def add(a, b):
-    return a + b
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Tổng là: " + str(2 + 5)
 
 if __name__ == "__main__":
-    print(add(2, 3))
+    app.run(host="0.0.0.0", port=3000)
